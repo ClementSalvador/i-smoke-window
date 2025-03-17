@@ -4,11 +4,13 @@
 # Dev 
 Quick guide on how to launch the project localy 
 ## Prerequisites
- * node : v22.14.0
- * npm : v10.9.2
+ * node : 22.14.0
+ * npm : 10.9.2
 
 ## Launching localy 
-Git Clone the project on your machine. 
-Go to the 'i-smoke-window' folder. 
-Run 'npm install'
-Run 'npm -start'
+ * Git Clone the project on your machine.  
+ * Go to the 'i-smoke-window' folder.  
+ * Run 'npm install'  
+ * Run 'npm -start'
+
+The app will be launching on http://localhost:3000 by default
