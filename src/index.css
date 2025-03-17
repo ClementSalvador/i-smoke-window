@@ -1,0 +1,41 @@
+body {
+  background-image: url('https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/cs2/bgDarkBlue.svg');
+  font-family: Stratum2;
+  color: whitesmoke;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'Stratum2';
+  src: local('Stratum2'), url('./ressources/font/Stratum2.otf') format('opentype');
+}
+
+.cardholder {
+  margin: 0.5%;
+  padding: 0.5%;
+}
+
+.card {
+  border-radius: 10px;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  margin-left: 1%;
+  margin-right: 1%;
+  display: inline-block;
+  text-align: center;
+  background-color: #33374d;
+}
+
+.card:hover {
+  background-color: whitesmoke;
+  color: #33374d;
+}
+
+.bold {
+  font-weight: bold;
+}

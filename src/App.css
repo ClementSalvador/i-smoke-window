@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'HighSpeed';
+    src: local('HighSpeed'), url('./ressources/font/HighSpeed.otf') format('opentype');
+}
+
+.App{
+    display: grid;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 5%;
+    background-color: #272a3b;
+    font-family: Stratum2;
+
+}
+
+.title {
+    font-family: HighSpeed;
+    font-size: 300%;
+    text-align: center;
+    margin-top: 3%;
+    color: whitesmoke;
+}
