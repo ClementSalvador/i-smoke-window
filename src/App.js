@@ -5,15 +5,32 @@ import Nav from './components/nav/Nav'
 import {  useEffect, useState } from 'react';
 
 import { maps, mapNull, sides, sideNull, utilities, utilityNull,landingPlaces, landingPlaceNull } from './ressources/Data';
+import { NavProvider } from './context/NavContext';
 
 function App() {
+
+  return (
+    <>
+    <div className="title">I SMOKE WINDOW</div>
+    <NavProvider>
+      <Nav></Nav>
+      <Chooser
+        title="map"
+        choosables={maps}
+      />
+    </NavProvider>
+    </>
+  );
+
+
+
+/* v1 - sans use context
   const [selectedMap, setSelectedMap] = useState(mapNull);
   const [selectedSide, setSelectedSide] = useState(sideNull);
   const [selectedUtility, setSelectedUtility] = useState(utilityNull);
   const [selectedLandingPlace, setSelectedLadingPlace] = useState(landingPlaceNull);
   const [visibility, setVisibility] = useState('map');
 
-  /** Gestion de l'affichage du bon chooser en fonction des éléments sélectionnés ou non */
   useEffect(() => {
     if(selectedMap === mapNull){
       setVisibility('map');
@@ -33,6 +50,7 @@ function App() {
     }
     setVisibility('');
   },[selectedMap, selectedSide, selectedUtility, selectedLandingPlace]);
+
 
   const resetNav = () => {
     setSelectedMap(mapNull);
@@ -92,7 +110,7 @@ function App() {
       />
       <button onClick={resetNav}>reset</button>
     </div>
-  );
+  );*/
 }
 
 export default App;

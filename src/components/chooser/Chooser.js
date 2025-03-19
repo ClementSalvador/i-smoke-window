@@ -1,16 +1,12 @@
 import Choosable from '../choosable/Choosable';
 import "./Chooser.css";
 
-export default function Chooser({ title, choosables, toCall, isVisible }) {
-    if(!isVisible){
-        return null;
-    }
+export default function Chooser({ title, choosables}) {
     
     const ChoosableList = choosables.map( choosable =>
         <Choosable
             props={choosable}
-            toCall={toCall}>
-        </Choosable>
+        />
     );
     
     return (

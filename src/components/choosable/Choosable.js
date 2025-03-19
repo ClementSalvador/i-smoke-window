@@ -1,9 +1,19 @@
 import "./Choosable.css"
+import {useNavUpdate} from '../../context/NavContext'
 
-export default function Choosable({props, toCall}){
+export default function Choosable({props}){
     
+    const navUpdate = useNavUpdate();
+
+    const defaultNav2 = {
+        map : {title : "bite", img : null},
+        side : null,
+        utility : null,
+        landing : null
+    }
+
     const onClickFunction = () => {
-        toCall(Object.create(props));
+       navUpdate.apply(defaultNav2);
     }
 
     return (

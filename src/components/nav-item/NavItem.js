@@ -1,11 +1,17 @@
 import "./NavItem.css";
 
-export default function NavItem({ itemState, itemType,setVisibilityMethod }) {
+export default function NavItem({item/* itemState, itemType,setVisibilityMethod */}) {
 
-    const onClick = () => {
+    return (
+        <div className="card nav-item">
+            <div className="nav-item-text">{item.title}</div>
+        </div>
+    )
+
+
+   /* const onClick = () => {
         setVisibilityMethod(itemType);
-    }
-
+    }*
     if (itemState.img) {
         return (
             <div className="card nav-item" onClick={onClick}>
@@ -19,7 +25,7 @@ export default function NavItem({ itemState, itemType,setVisibilityMethod }) {
         <div className="card nav-item" onClick={onClick}>
             <div className="nav-item-text">{itemState.title}</div>
         </div>
-    )
+    )*/
 
 
 }
