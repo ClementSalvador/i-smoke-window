@@ -1,25 +1,21 @@
 import "./Choosable.css"
-import {useNavUpdate} from '../../context/NavContext'
+import {useNavUpdate, useNav} from '../../context/NavContext'
 
-export default function Choosable({props}){
+export default function Choosable({type, choosable}){
     
     const navUpdate = useNavUpdate();
-
-    const defaultNav2 = {
-        map : {title : "bite", img : null},
-        side : null,
-        utility : null,
-        landing : null
-    }
+    const nav = useNav();
 
     const onClickFunction = () => {
-       navUpdate.apply(defaultNav2);
+       const newNav = Object.create(nav);
+       Reflect.set(newNav, type, choosable)
+       navUpdate.apply(newNav);
     }
 
     return (
         <div className="choosable card" onClick={onClickFunction}>
-            <img src={props.img} alt={props.alt}/>
-            <p>{props.title}</p>
+            <img src={choosable.img} alt={choosable.alt}/>
+            <p>{choosable.title}</p>
         </div>
     )
 }

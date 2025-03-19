@@ -5,9 +5,9 @@ const NavUpdateContext = React.createContext();
 
 const defaultNav = {
     map : {title : "map", img : null},
-    side : null,
-    utility : null,
-    landing : null
+    side : {title : "side", img : null},
+    utility : {title : "utility", img : null},
+    landing : {title : "landing", img : null}
 }
 
 export function useNav(){

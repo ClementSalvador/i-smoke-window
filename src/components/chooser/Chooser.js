@@ -1,17 +1,18 @@
 import Choosable from '../choosable/Choosable';
 import "./Chooser.css";
 
-export default function Chooser({ title, choosables}) {
+export default function Chooser({ type, choosables}) {
     
     const ChoosableList = choosables.map( choosable =>
         <Choosable
-            props={choosable}
+            type={type}
+            choosable={choosable}
         />
     );
     
     return (
         <div className="chooser cardholder">
-            <h1>Choose your {title} : </h1>
+            <h1>Choose your {type} : </h1>
             {ChoosableList}
         </div>
     )

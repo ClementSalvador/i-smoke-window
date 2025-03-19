@@ -9,14 +9,17 @@ import { NavProvider } from './context/NavContext';
 
 function App() {
 
+  const chooserType = 'map';
+  const choosables = maps;
+
   return (
     <>
     <div className="title">I SMOKE WINDOW</div>
     <NavProvider>
       <Nav></Nav>
       <Chooser
-        title="map"
-        choosables={maps}
+        type={chooserType}
+        choosables={choosables}
       />
     </NavProvider>
     </>
