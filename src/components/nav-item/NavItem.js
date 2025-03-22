@@ -1,25 +1,31 @@
 import "./NavItem.css";
 
-export default function NavItem({ itemState, itemType,setVisibilityMethod }) {
+import { useNav,useNavUpdate } from '../../context/NavContext'
 
-    const onClick = () => {
-        setVisibilityMethod(itemType);
+export default function NavItem({type, item}) {
+    
+    const nav = useNav();
+    const navUpdate = useNavUpdate();
+
+    const empty = () => {
+        const newNav = {...nav}
+        const emptyElement = {title : type, img : null, isDefault : true};
+        Reflect.set(newNav, type, emptyElement);
+        navUpdate.apply(newNav);
     }
-
-    if (itemState.img) {
+    
+    if(item.img){
         return (
-            <div className="card nav-item" onClick={onClick}>
-                <div className="nav-item-text bold">{itemState.title}</div>
-                <img src={itemState.img} alt={itemState.alt} />
+            <div className="card nav-item" onClick={empty}>
+                <div className="nav-item-text bold">{item.title}</div>
+                <img src={item.img} alt=""/>
+            </div>
+        )
+    }else{
+        return (
+            <div className="card nav-item">
+                <div className="nav-item-text">{item.title}</div>
             </div>
         )
     }
-
-    return (
-        <div className="card nav-item" onClick={onClick}>
-            <div className="nav-item-text">{itemState.title}</div>
-        </div>
-    )
-
-
 }
