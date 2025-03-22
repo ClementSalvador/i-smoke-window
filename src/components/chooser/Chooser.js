@@ -1,9 +1,11 @@
 import Choosable from '../choosable/Choosable';
 import "./Chooser.css";
 
-import { maps, mapNull, sides, sideNull, utilities, utilityNull,landingPlaces, landingPlaceNull } from '../../ressources/Data';
 import { useNav } from '../../context/NavContext';
-import {getChoosableMaps} from '../../services/MapService';
+import { getChoosableMaps } from '../../services/MapService';
+import { getChoosableSides } from '../../services/SideService';
+import { getChoosableUtilities } from '../../services/UtilitiesService';
+import { getChoosableLandingPlaces } from '../../services/LandingPlacesService';
 
 export default function Chooser() {
     
@@ -16,13 +18,13 @@ export default function Chooser() {
         choosables = getChoosableMaps();
     }else if(nav.side.isDefault){
         type = 'side';
-        choosables = sides;
+        choosables = getChoosableSides();
     }else if(nav.utility.isDefault){
         type = 'utility';
-        choosables = utilities; 
+        choosables = getChoosableUtilities(); 
     }else if(nav.landing.isDefault) {
         type = 'landing';
-        choosables = landingPlaces;
+        choosables = getChoosableLandingPlaces();
     }else{
         return (<></>);
     }
