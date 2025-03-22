@@ -8,7 +8,7 @@ export default function Choosable({type, choosable}){
 
     const onClickFunction = () => {
        const newNav = Object.create(nav);
-       Reflect.set(newNav, type, choosable)
+       Reflect.set(newNav, type, choosable);
        navUpdate.apply(newNav);
     }
 
