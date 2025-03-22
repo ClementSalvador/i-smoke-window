@@ -7,24 +7,16 @@ export default function Nav() {
 
     const nav = useNav();
 
+    const NavItems = Object.keys(nav).map(property =>    
+        <NavItem
+            type={property}
+            item={nav[property]}
+        />
+    );
+
     return (
         <div id="nav" className="NAV cardholder">
-            <NavItem
-                type='map'
-                item={nav.map}
-            />
-            <NavItem
-                type='side'
-                item={nav.side}
-            />
-            <NavItem
-                type='utility'
-                item={nav.utility}
-            />
-            <NavItem
-                type='landing'
-                item={nav.landing}
-            />
+            {NavItems}
         </div>
     )
 }

@@ -8,7 +8,7 @@ export default function NavItem({type, item}) {
     const navUpdate = useNavUpdate();
 
     const empty = () => {
-        const newNav = Object.create(nav);
+        const newNav = {...nav}
         const emptyElement = {title : type, img : null, isDefault : true};
         Reflect.set(newNav, type, emptyElement);
         navUpdate.apply(newNav);
