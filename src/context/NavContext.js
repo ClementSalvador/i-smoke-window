@@ -4,10 +4,10 @@ const NavContext = React.createContext();
 const NavUpdateContext = React.createContext();
 
 const defaultNav = {
-    map : {title : "map", img : null},
-    side : {title : "side", img : null},
-    utility : {title : "utility", img : null},
-    landing : {title : "landing", img : null}
+    map : {title : "map", img : null, isDefault : true},
+    side : {title : "side", img : null, isDefault : true},
+    utility : {title : "utility", img : null, isDefault : true},
+    landing : {title : "landing", img : null, isDefault : true}
 }
 
 export function useNav(){
